@@ -1,0 +1,46 @@
+﻿@model IEnumerable<IncIncEntityUserAccounts.Models.PieceworkerModel>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    // Variables for totals
+    int totalWorkers = 0;
+    int totalMessages = 0;
+    decimal totalPay = 0M;
+    decimal averagePay;
+}
+
+<h1>Worker Summary</h1>
+
+@foreach (var item in Model)
+{
+
+    // Increment totals
+    totalWorkers++;
+    totalMessages += item.Messages;
+    totalPay += item.GetPay();
+    
+}
+
+@{
+    if (totalWorkers > 0)
+    {
+        averagePay = totalPay / totalWorkers;
+
+        <div class="col-md-6 offset-3">
+            <p>
+                Total Workers: @totalWorkers
+            </p>
+            <p>
+                Total Messages: @totalMessages
+            </p>
+            <p>
+                Total Pay: @totalPay.ToString("c")
+            </p>
+            <p>
+                Average Pay: @averagePay.ToString("c")
+            </p>
+        </div>
+    }
+
+}
