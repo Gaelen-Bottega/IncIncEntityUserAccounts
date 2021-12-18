@@ -3,7 +3,7 @@
 // Created: December 6, 2021
 // Modified: December 17, 2021
 // Description: This file contains the read/write properties for the Pieceworker and we write our validation here.
-// For lab 5 we also write our pay model here for both types of workers.
+// For lab 6 we also write our pay model here for both types of workers.
 
 using System;
 using System.ComponentModel.DataAnnotations;

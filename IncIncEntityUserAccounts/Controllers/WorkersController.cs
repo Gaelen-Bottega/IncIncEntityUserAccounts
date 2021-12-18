@@ -1,4 +1,10 @@
-﻿using System;
+﻿// PieceworkerModel.cs
+// Author: Gaelen Rhoads & Kyle Chapman
+// Created: December 6, 2021
+// Modified: December 17, 2021
+// Description: This file contains the calls to the views so pages can render and some user role permission rules for the application.
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -12,6 +18,9 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace IncIncEntityUserAccounts.Controllers
 {
+    /// <summary>
+    /// Make it so users have to login to view any page in this controller.
+    /// </summary>
     [Authorize]
     public class WorkersController : Controller
     {
@@ -30,6 +39,7 @@ namespace IncIncEntityUserAccounts.Controllers
         }
 
         // GET: Summary
+        // Allow Anonymous allows unregistered users to view the page
         [AllowAnonymous]
         public async Task<IActionResult> Summary()
         {

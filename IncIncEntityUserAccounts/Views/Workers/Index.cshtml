@@ -1,4 +1,10 @@
-﻿@model IEnumerable<IncIncEntityUserAccounts.Models.PieceworkerModel>
+﻿@*// PieceworkerModel.cs
+// Author: Gaelen Rhoads & Kyle Chapman
+// Created: December 6, 2021
+// Modified: December 17, 2021
+// Description: This file contains input for workers.*@
+
+@model IEnumerable<IncIncEntityUserAccounts.Models.PieceworkerModel>
 
 @{
     ViewData["Title"] = "Index";
@@ -30,29 +36,30 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.FirstName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LastName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Messages)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IsSenior)
-            </td>
-            <td>
-                @item.GetPay().ToString("c")
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Messages)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsSenior)
+                </td>
+                <td>
+                    @item.GetPay().ToString("c")
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

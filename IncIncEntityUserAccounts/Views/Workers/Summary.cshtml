@@ -1,4 +1,10 @@
-﻿@model IEnumerable<IncIncEntityUserAccounts.Models.PieceworkerModel>
+﻿@*// PieceworkerModel.cs
+// Author: Gaelen Rhoads & Kyle Chapman
+// Created: December 6, 2021
+// Modified: December 17, 2021
+// Description: This file contains the summary values for all workers.*@
+
+@model IEnumerable<IncIncEntityUserAccounts.Models.PieceworkerModel>
 
 @{
     ViewData["Title"] = "Index";
@@ -19,7 +25,7 @@
     totalWorkers++;
     totalMessages += item.Messages;
     totalPay += item.GetPay();
-    
+
 }
 
 @{
